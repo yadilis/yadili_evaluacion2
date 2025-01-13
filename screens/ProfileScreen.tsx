@@ -40,7 +40,7 @@ const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
   if (loading) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Cargando información.......</Text>
+        <Text style={styles.title}>Cargando información .........</Text>
       </View>
     );
   }
