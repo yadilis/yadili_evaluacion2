@@ -3,8 +3,6 @@ import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/Config';
 import Navegador from '../browser/MainNavigator';
-
-
 export default function LoginScreen( {navigation} : any) {
 const styles = StyleSheet.create({
   container: {

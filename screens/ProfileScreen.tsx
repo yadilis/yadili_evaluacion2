@@ -40,17 +40,17 @@ const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
   if (loading) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Cargando información...</Text>
+        <Text style={styles.title}>Cargando información.......</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Perfil de Usuario</Text>
+      <Text style={styles.title}>Perfil</Text>
       {user ? (
         <>
-          <Text style={styles.info}>Correo electrónico: {user.email}</Text>
+          <Text style={styles.info}>Correo electrónico:{user.email}</Text>
       
           <Button title="Cerrar sesión" onPress={handleSignOut} />
         </>

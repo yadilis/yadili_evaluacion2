@@ -24,7 +24,6 @@ export default function RegisterScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigation = useNavigation();
-
   const handleRegister = async () => {
     if (!username || !email || !password) {
       setError('Por favor completa todos los campos');
@@ -43,8 +42,6 @@ export default function RegisterScreen() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       const userId = username.toLowerCase().replace(/\s+/g, '_');
-
-   
       const userData = {
         username,
         email: user.email,
@@ -61,7 +58,7 @@ export default function RegisterScreen() {
       Alert.alert('¡Éxito!', 'Registro completado correctamente. ¡Puedes comenzar a jugar!', [
         {
           text: 'OK',
-          onPress: () => navigation.navigate('Login' as never), // Redirigir al login
+          onPress: () => navigation.navigate('Login' as never), 
         },
       ]);
     } catch (err: any) {

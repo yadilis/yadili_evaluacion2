@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-
 export default function WelcomeScreen({navigation} : any) {
   return (
     <View style={styles.container}>
@@ -17,9 +16,9 @@ export default function WelcomeScreen({navigation} : any) {
           style={styles.registerButton}
           onPress={() => navigation.navigate("Registro")}
         >
-          <Text style={styles.buttonText}>Registrarse</Text>
+          <Text style={styles.buttonText}>Registrarse </Text>
 
-          <Text style={styles.buttonText}>Desarrollado por: Yadira Palomo</Text>
+          <Text style={styles.buttonText}>Desarrollado por:Yadira Palomo</Text>
         </TouchableOpacity>
       </View>
     </View>
