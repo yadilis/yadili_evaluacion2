@@ -11,14 +11,33 @@ import ProfileScreen from "../screens/ProfileScreen";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// Stack Navigator with Welcome, Login, and Register
 function MyStack() {
     return (
         <Stack.Navigator initialRouteName="Welcome">
-            <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Registro" component={RegistroScreen} />
-            <Stack.Screen name="Main" component={MyTab} />
+           
+            <Stack.Screen
+                name="Welcome"
+                component={WelcomeScreen}
+                options={{ headerShown: false }} 
+            />
+         
+            <Stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{ headerShown: true }} 
+            />
+         
+            <Stack.Screen
+                name="Registro"
+                component={RegistroScreen}
+                options={{ headerShown: true }} 
+            />
+            {/* Main Tab Navigator */}
+            <Stack.Screen
+                name="Main"
+                component={MyTab}
+                options={{ headerShown: false }} 
+            />
         </Stack.Navigator>
     );
 }
