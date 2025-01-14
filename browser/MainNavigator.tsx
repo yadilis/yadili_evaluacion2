@@ -8,36 +8,35 @@ import OperationsScreen from "../screens/OperationsScreen";
 import HistoryScreen from "../screens/HistoryScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
-const Stack= createStackNavigator()
-const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-function MyStack(){
+// Stack Navigator with Welcome, Login, and Register
+function MyStack() {
     return (
         <Stack.Navigator initialRouteName="Welcome">
-            <Stack.Screen name="Login" component={ LoginScreen} 
-            options={()=> ({headerShown: false})}/>
-            <Stack.Screen name="Registro" component={ RegistroScreen} />
-            <Stack.Screen name="Welcome" component={ MyTab} />
+            <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Registro" component={RegistroScreen} />
+            <Stack.Screen name="Main" component={MyTab} />
         </Stack.Navigator>
-    )
-} 
-
-function MyTab(){
-    return(
-        <Tab.Navigator>
-            <Tab.Screen name="Welcome" component={ WelcomeScreen}/>
-            <Tab.Screen name='Operaciones' component={ OperationsScreen}/>
-            <Tab.Screen name= 'Historia' component={ HistoryScreen}/>
-            <Tab.Screen name= 'Perfil' component={ ProfileScreen}/>
-        </Tab.Navigator> )
-        
-    
+    );
 }
 
-export default function Navegador(){
-    return(
+function MyTab() {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen name="Operaciones" component={OperationsScreen} />
+            <Tab.Screen name="Historia" component={HistoryScreen} />
+            <Tab.Screen name="Perfil" component={ProfileScreen} />
+        </Tab.Navigator>
+    );
+}
+
+export default function Navegador() {
+    return (
         <NavigationContainer>
-            <MyStack/>
+            <MyStack />
         </NavigationContainer>
-    )
+    );
 }
